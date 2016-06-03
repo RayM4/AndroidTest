@@ -69,7 +69,16 @@
         android:layout_height="50dp"
         android:layout_marginTop="225dp"
         android:hint="Random Text"
+        android:textColor="@color/black"
         />
 
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="275dp"
+        android:layout_centerHorizontal="true"
+        android:text="Do Something"
+        />
 
 </RelativeLayout>
