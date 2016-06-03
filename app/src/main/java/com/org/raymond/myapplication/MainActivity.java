@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         buttons.add(b2);
         buttons.add(b3);
 
-        //final Button b4 = (Button) findViewById(R.id.button4);
+        final Button b4 = (Button) findViewById(R.id.button4);
 
         randButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -61,6 +61,12 @@ public class MainActivity extends AppCompatActivity {
                 textBox.setBackground(tempColor);
             }
         });
+        b4.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                textBox.setText("Some Text");
+            }
+        });
+
 
     }
 
