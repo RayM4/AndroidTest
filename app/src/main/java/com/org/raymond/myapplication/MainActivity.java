@@ -9,13 +9,18 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,8 +43,14 @@ public class MainActivity extends AppCompatActivity {
         final Button b4 = (Button) findViewById(R.id.button4);
         //final RelativeLayout textContainer = (RelativeLayout) findViewById(R.id.textList);
         final LinearLayout textContainer = (LinearLayout) findViewById(R.id.textList);
-
+        final ListView listContainer = (ListView) findViewById(R.id.list2);
         final ArrayList<String> listOfText = new ArrayList<String>();
+
+        //adaptor for listView
+        //final List<String> aList = new ArrayList<String>();
+
+        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, listOfText);
+        listContainer.setAdapter(arrayAdapter);
 
         randButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -79,10 +90,12 @@ public class MainActivity extends AppCompatActivity {
                 for (String temp : listOfText) {
                     System.out.println(temp);
                 }
-                System.out.println(listOfText.size());
-                System.out.println(textContainer.getChildCount());
-                System.out.println("-------");
-                genTextViews(listOfText, textContainer);
+//                System.out.println(listOfText.size());
+//                System.out.println(textContainer.getChildCount());
+//                System.out.println("-------");
+                //genTextViews(listOfText, textContainer);
+                //genTextViews(listOfText, listContainer);
+                arrayAdapter.add(listOfText.get(listOfText.size()-1));
             }
         });
 
@@ -107,6 +120,18 @@ public class MainActivity extends AppCompatActivity {
             LinearLayout.LayoutParams para = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
             temp.setLayoutParams(para);
             container.addView(temp);
+        }
+    }
+    //Listview version
+    public void genTextViews(ArrayList<String> arr, List<String> adapt) {
+        if (adapt.size() < arr.size()) {
+//            int index = adapt.size();
+//            TextView temp = new TextView(this);
+//            temp.setText(arr.get(index));
+//            //temp.setId(index);
+//            //RelativeLayout.LayoutParams para = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+//            ListView.LayoutParams para = new ListView.LayoutParams(ListView.LayoutParams.WRAP_CONTENT, ListView.LayoutParams.WRAP_CONTENT);
+//            temp.setLayoutParams(para);
         }
     }
 

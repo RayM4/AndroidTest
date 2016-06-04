@@ -88,7 +88,15 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="325dp">
 
-
     </LinearLayout>
+
+    <ListView
+        android:id="@+id/list2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textList"
+        android:background="@color/black"
+        >
+    </ListView>
 
 </RelativeLayout>
