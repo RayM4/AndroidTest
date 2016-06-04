@@ -95,7 +95,8 @@ public class MainActivity extends AppCompatActivity {
 //                System.out.println("-------");
                 //genTextViews(listOfText, textContainer);
                 //genTextViews(listOfText, listContainer);
-                arrayAdapter.add(listOfText.get(listOfText.size()-1));
+                //arrayAdapter.add(listOfText.get(listOfText.size()-1));
+                arrayAdapter.notifyDataSetChanged();
             }
         });
 
