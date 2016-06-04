@@ -30,6 +30,8 @@
         android:text="@string/activeButton"
         android:layout_centerHorizontal="true"/>
 
+
+
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -63,6 +65,7 @@
     </RelativeLayout>
 
 
+
     <EditText
         android:id="@+id/text1"
         android:layout_width="fill_parent"
@@ -70,6 +73,22 @@
         android:layout_marginTop="225dp"
         android:hint="Random Text"
         />
+
+    <Button
+        android:id="@+id/enterbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="@string/enterButton"
+        android:layout_centerHorizontal="true"/>
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/listView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/text1" />
 
 
 </RelativeLayout>
