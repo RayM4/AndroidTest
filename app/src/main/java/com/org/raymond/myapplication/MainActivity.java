@@ -3,6 +3,7 @@ package com.org.raymond.myapplication;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -10,6 +11,8 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -33,6 +36,10 @@ public class MainActivity extends AppCompatActivity {
         buttons.add(b3);
 
         final Button b4 = (Button) findViewById(R.id.button4);
+        //final RelativeLayout textContainer = (RelativeLayout) findViewById(R.id.textList);
+        final LinearLayout textContainer = (LinearLayout) findViewById(R.id.textList);
+
+        final ArrayList<String> listOfText = new ArrayList<String>();
 
         randButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -63,10 +70,21 @@ public class MainActivity extends AppCompatActivity {
         });
         b4.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                textBox.setText("Some Text");
+                //textBox.setText("Some Text");
+                if (textBox.getText().length() > 0) {
+                    listOfText.add(textBox.getText().toString());
+                }
+                textBox.setText("");
+
+                for (String temp : listOfText) {
+                    System.out.println(temp);
+                }
+                System.out.println(listOfText.size());
+                System.out.println(textContainer.getChildCount());
+                System.out.println("-------");
+                genTextViews(listOfText, textContainer);
             }
         });
-
 
     }
 
@@ -77,5 +95,22 @@ public class MainActivity extends AppCompatActivity {
             buttons.get(i).setBackground(buttons.get(i+1).getBackground());
         }
         buttons.get(buttons.size()-1).setBackground(firstColor);
+    }
+
+    public void genTextViews(ArrayList<String> arr, LinearLayout container) {
+        if (container.getChildCount() < arr.size()) {
+            int index = container.getChildCount();
+            TextView temp = new TextView(this);
+            temp.setText(arr.get(index));
+            //temp.setId(index);
+            //RelativeLayout.LayoutParams para = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+            LinearLayout.LayoutParams para = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            temp.setLayoutParams(para);
+            container.addView(temp);
+        }
+    }
+
+    public String genId(String name, int id) {
+        return name + "_" + id;
     }
 }

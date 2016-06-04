@@ -78,7 +78,17 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="275dp"
         android:layout_centerHorizontal="true"
-        android:text="Do Something"
+        android:text="Add To List"
         />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/textList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="325dp">
+
+
+    </LinearLayout>
 
 </RelativeLayout>
