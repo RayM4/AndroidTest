@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Test Application</string>
     <string name="activeButton">Generate Number/Rotate Colors</string>
+    <string name="title_activity_display_message">DisplayMessageActivity</string>
 </resources>

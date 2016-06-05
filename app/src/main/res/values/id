@@ -6,5 +6,8 @@
     <string name="button3">button3</string>
     <string name="text1">text1</string>
     <string name="button4">button4</string>
+    <string name="button5">button5</string>
     <string name="textList">textList01</string>
+    <string name="edit_message">edit_message</string>
+    <string name="number2">number</string>
 </resources>

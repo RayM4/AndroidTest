@@ -1,5 +1,6 @@
 package com.org.raymond.myapplication;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
@@ -19,13 +20,15 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    public final static String EXTRA_MESSAGE = "com.org.raymond.myapplication.MESSAGE";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         final Button randButton = (Button) findViewById(R.id.button);
         final TextView textF = (TextView) findViewById(R.id.number);
-        final EditText textBox = (EditText) findViewById(R.id.text1);
+        final EditText textBox = (EditText) findViewById(R.id.edit_message);
 
         final Button b1 = (Button) findViewById(R.id.button1);
         final Button b2 = (Button) findViewById(R.id.button2);
@@ -36,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         buttons.add(b3);
 
         final Button b4 = (Button) findViewById(R.id.button4);
+        final Button b5 = (Button) findViewById(R.id.button5);
         //final RelativeLayout textContainer = (RelativeLayout) findViewById(R.id.textList);
         final LinearLayout textContainer = (LinearLayout) findViewById(R.id.textList);
 
@@ -86,15 +90,31 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        b5.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //textBox.setText("Some Text");
+                sendMessage(findViewById(R.id.number2));
+            }
+        });
+    }
+
+
+
+    public void sendMessage(View view) {
+        Intent intent = new Intent(this, DisplayMessageActivity.class);
+        EditText editText = (EditText) findViewById(R.id.edit_message);
+        String message = editText.getText().toString();
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
     }
 
     public void rotateColors(ArrayList<Button> buttons) {
         Drawable firstColor = buttons.get(0).getBackground();
-        for (int i = 0; i < buttons.size()-1; i++) {
+        for (int i = 0; i < buttons.size() - 1; i++) {
             //System.out.println(i);
-            buttons.get(i).setBackground(buttons.get(i+1).getBackground());
+            buttons.get(i).setBackground(buttons.get(i + 1).getBackground());
         }
-        buttons.get(buttons.size()-1).setBackground(firstColor);
+        buttons.get(buttons.size() - 1).setBackground(firstColor);
     }
 
     public void genTextViews(ArrayList<String> arr, LinearLayout container) {
