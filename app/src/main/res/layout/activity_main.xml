@@ -23,10 +23,19 @@
         android:textColor="@color/black"/>
 
     <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Switch Scene"
+        android:layout_centerHorizontal="true"
+        android:onClick="sendMessage"/>
+
+    <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="60dp"
         android:text="@string/activeButton"
         android:layout_centerHorizontal="true"/>
 
@@ -64,7 +73,7 @@
 
 
     <EditText
-        android:id="@+id/text1"
+        android:id="@+id/edit_message"
         android:layout_width="fill_parent"
         android:layout_height="50dp"
         android:layout_marginTop="225dp"
