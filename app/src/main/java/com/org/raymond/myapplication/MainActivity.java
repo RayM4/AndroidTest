@@ -85,7 +85,6 @@ public class MainActivity extends AppCompatActivity {
         });
         b4.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //textBox.setText("Some Text");
                 if (textBox.getText().length() > 0) {
                     listOfText.add(textBox.getText().toString());
                 }
@@ -94,11 +93,7 @@ public class MainActivity extends AppCompatActivity {
                 for (String temp : listOfText) {
                     System.out.println(temp);
                 }
-//                System.out.println(listOfText.size());
-//                System.out.println(textContainer.getChildCount());
-//                System.out.println("-------");
                 //genTextViews(listOfText, textContainer);
-                //genTextViews(listOfText, listContainer);
                 //arrayAdapter.add(listOfText.get(listOfText.size()-1));
                 arrayAdapter.notifyDataSetChanged();
             }
@@ -141,18 +136,6 @@ public class MainActivity extends AppCompatActivity {
             LinearLayout.LayoutParams para = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
             temp.setLayoutParams(para);
             container.addView(temp);
-        }
-    }
-    //Listview version
-    public void genTextViews(ArrayList<String> arr, List<String> adapt) {
-        if (adapt.size() < arr.size()) {
-//            int index = adapt.size();
-//            TextView temp = new TextView(this);
-//            temp.setText(arr.get(index));
-//            //temp.setId(index);
-//            //RelativeLayout.LayoutParams para = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-//            ListView.LayoutParams para = new ListView.LayoutParams(ListView.LayoutParams.WRAP_CONTENT, ListView.LayoutParams.WRAP_CONTENT);
-//            temp.setLayoutParams(para);
         }
     }
 
