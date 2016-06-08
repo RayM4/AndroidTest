@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -18,7 +19,9 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import java.io.IOException;
 import java.lang.reflect.Array;
+import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -55,6 +58,20 @@ public class MainActivity extends AppCompatActivity {
 
         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, listOfText);
         listContainer.setAdapter(arrayAdapter);
+
+        //setting up sockets
+//        String serverIP = "192.168.213.101";
+//        int serverPort = 8080;
+//        try {
+//            Socket s = new Socket(serverIP, serverPort);
+//            //System.out.println("Connected to Server");
+//            Log.d("Server:","Connected to Server");
+//        }
+//        catch (IOException e) {
+//            //System.out.println("Failed to connect to Server");
+//            Log.d("Server:", "Failed to connect to Server");
+//        }
+
 
         randButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -96,6 +113,7 @@ public class MainActivity extends AppCompatActivity {
                 //genTextViews(listOfText, textContainer);
                 //arrayAdapter.add(listOfText.get(listOfText.size()-1));
                 arrayAdapter.notifyDataSetChanged();
+
             }
         });
 
