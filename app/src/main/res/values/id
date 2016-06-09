@@ -11,4 +11,7 @@
     <string name="list2">list2</string>
     <string name="edit_message">edit_message</string>
     <string name="number2">number</string>
+    <string name="themeSetting">themeSetting</string>
+    <string name="themeSetting_all">themeSetting_all</string>
+    <string name="listView">listView</string>
 </resources>
