@@ -60,8 +60,8 @@ public class MainActivity extends AppCompatActivity {
         listContainer.setAdapter(arrayAdapter);
 
         //setting up sockets
-//        String serverIP = "192.168.213.101";
-//        int serverPort = 8080;
+        //String serverIP = "192.168.1.12";
+
 //        try {
 //            Socket s = new Socket(serverIP, serverPort);
 //            //System.out.println("Connected to Server");
@@ -71,6 +71,9 @@ public class MainActivity extends AppCompatActivity {
 //            //System.out.println("Failed to connect to Server");
 //            Log.d("Server:", "Failed to connect to Server");
 //        }
+//        SocketClient client = new SocketClient(s);
+//        client.start();
+//        client.sendMessage("some text lalalalalaa");
 
 
         randButton.setOnClickListener(new View.OnClickListener() {
@@ -113,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
                 //genTextViews(listOfText, textContainer);
                 //arrayAdapter.add(listOfText.get(listOfText.size()-1));
                 arrayAdapter.notifyDataSetChanged();
-
+                
             }
         });
 
