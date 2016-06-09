@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.org.raymond.myapplication.DisplayMessageActivity">
+    tools:context=".SettingsActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -31,14 +31,42 @@
         android:layout_margin="@dimen/fab_margin"
         android:src="@android:drawable/ic_dialog_email" />
 
-    <TextView
-        android:id="@+id/number2"
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="400dp"
-        android:paddingLeft="220dp"
-        android:text="HIIIII"
-        android:textColor="@color/black" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/detail_description_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ListView
+                    android:layout_width="match_parent"
+                    android:layout_height="526dp"
+                    android:id="@+id/listView"
+                    android:fastScrollAlwaysVisible="false"
+                    android:dividerHeight="0dp" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </RelativeLayout>
+    <!--<TextView-->
+        <!--android:id="@+id/number2"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="400dp"-->
+        <!--android:paddingLeft="220dp"-->
+        <!--android:text="HIIIII"-->
+        <!--android:textColor="@color/black" />-->
 
 </android.support.design.widget.CoordinatorLayout>
 
