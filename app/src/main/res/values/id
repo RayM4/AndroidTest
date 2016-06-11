@@ -14,4 +14,5 @@
     <string name="themeSetting">themeSetting</string>
     <string name="themeSetting_all">themeSetting_all</string>
     <string name="listView">listView</string>
+    <string name="lvExp">lvExp</string>
 </resources>

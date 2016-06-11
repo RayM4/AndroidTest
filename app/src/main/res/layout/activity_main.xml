@@ -9,67 +9,23 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.org.raymond.myapplication.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Random Number:"
-        android:textColor="@color/black"/>
-    <TextView
-        android:id="@+id/number"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingLeft="120dp"
-        android:text="0"
-        android:textColor="@color/black"/>
-
     <Button
         android:id="@+id/button5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Switch Scene"
+        android:text="Settings"
         android:onClick="sendMessage"
         android:layout_alignBottom="@+id/edit_message"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:text="@string/activeButton"
-        android:layout_centerHorizontal="true"/>
-
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp">
+        android:layout_marginTop="50dp"
+        android:id="@+id/relativeLayout">
 
-        <Button
-            android:id="@+id/button1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
-            android:text = "A"
-            android:background="@color/red"/>
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
-            android:text="B"
-            android:layout_toRightOf="@+id/button1"
-            android:background="@color/green"/>
-
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
-            android:text="C"
-            android:layout_toRightOf="@+id/button2"
-            android:background="@color/blue"/>
     </RelativeLayout>
 
 
@@ -77,11 +33,11 @@
         android:id="@+id/edit_message"
         android:layout_width="fill_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="225dp"
         android:hint="Random Text"
         android:textColor="@color/black"
-        android:layout_alignRight="@+id/button5"
-        android:layout_alignEnd="@+id/button5" />
+        android:layout_below="@+id/relativeLayout"
+        android:layout_toLeftOf="@+id/button5"
+        android:layout_toStartOf="@+id/button5" />
 
     <Button
         android:id="@+id/button4"
