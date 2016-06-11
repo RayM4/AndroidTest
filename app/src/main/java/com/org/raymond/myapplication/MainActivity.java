@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+//        setContentView(R.layout.activity_register);
         final Button randButton = (Button) findViewById(R.id.button);
         final TextView textF = (TextView) findViewById(R.id.number);
         final EditText textBox = (EditText) findViewById(R.id.edit_message);
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
         final Button b4 = (Button) findViewById(R.id.button4);
         final Button b5 = (Button) findViewById(R.id.button5);
+        final Button regButton = (Button) findViewById(R.id.regButton);
         //final RelativeLayout textContainer = (RelativeLayout) findViewById(R.id.textList);
         final LinearLayout textContainer = (LinearLayout) findViewById(R.id.textList);
         final ListView listContainer = (ListView) findViewById(R.id.list2);
@@ -114,6 +116,14 @@ public class MainActivity extends AppCompatActivity {
                 sendMessage();
             }
         });
+
+        regButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                gotoRegister();
+            }
+        });
+
+
     }
 
 
@@ -123,6 +133,11 @@ public class MainActivity extends AppCompatActivity {
         //EditText editText = (EditText) findViewById(R.id.edit_message);
         //String message = editText.getText().toString();
         //intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
+    }
+
+    public void gotoRegister() {
+        Intent intent = new Intent(this, registerActivity.class);
         startActivity(intent);
     }
 

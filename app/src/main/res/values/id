@@ -14,4 +14,11 @@
     <string name="themeSetting">themeSetting</string>
     <string name="themeSetting_all">themeSetting_all</string>
     <string name="listView">listView</string>
+    <string name="register">register</string>
+    <string name="email">email</string>
+    <string name="password">password</string>
+    <string name="fname">fname</string>
+    <string name="lname">lname</string>
+    <string name="regTitle">reg</string>
+    <string name="regButton">regButt</string>
 </resources>
