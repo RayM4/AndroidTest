@@ -7,7 +7,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.org.raymond.myapplication.MainActivity">
+    tools:context="com.org.raymond.myapplication.MainActivity"
+    android:id="@+id/main">
 
     <Button
         android:id="@+id/button5"
@@ -34,7 +35,6 @@
         android:layout_height="50dp"
         android:hint="Random Text"
         android:textColor="@color/black"
-        android:layout_below="@+id/relativeLayout"
         android:layout_toLeftOf="@+id/button5"
         android:layout_toStartOf="@+id/button5" />
 

@@ -1,0 +1,7 @@
+<resources>
+    <string name="as_fontFamily">Arial</string>
+    <string name="as_fontSize">12</string>
+    <string name="as_main_background">Black</string>
+
+
+</resources>

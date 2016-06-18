@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.ExpandableListView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         final ListView listContainer = (ListView) findViewById(R.id.list2);
         final ArrayList<String> listOfText = new ArrayList<String>();
 
+//        String as = getResources().getString(R.appSettings.as_main_background);
         //adaptor for listView
         //final List<String> aList = new ArrayList<String>();
 
@@ -123,4 +125,5 @@ public class MainActivity extends AppCompatActivity {
     public String genId(String name, int id) {
         return name + "_" + id;
     }
+
 }

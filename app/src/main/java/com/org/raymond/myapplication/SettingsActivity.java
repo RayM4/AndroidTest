@@ -1,11 +1,13 @@
 package com.org.raymond.myapplication;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -27,6 +29,9 @@ public class SettingsActivity extends AppCompatActivity {
     List<String> listDataHeader;
     HashMap<String, List<String>> listDataChild;
 
+    //RelativeLayout main;
+    RelativeLayout settings;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +39,7 @@ public class SettingsActivity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        System.out.println("ajkshajkshjkahsjashajkhsajshakshakhsakj");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 //        list = (ListView) findViewById(R.id.listView);
@@ -67,7 +72,8 @@ public class SettingsActivity extends AppCompatActivity {
 //                descriptionText.setMaxLines(Integer.MAX_VALUE);
 //            }
 //        });
-
+       // main = (RelativeLayout) findViewById(R.id.main);
+        settings = (RelativeLayout) findViewById(R.id.settings);
         expListView = (ExpandableListView) findViewById(R.id.lvExp);
         prepareListData();
         listAdapter = new ExpandableListAdapter(this, listDataHeader, listDataChild);
@@ -78,14 +84,14 @@ public class SettingsActivity extends AppCompatActivity {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v,
                                         int groupPosition, int childPosition, long id) {
+                //int header = Integer.parseInt(listDataHeader.get(groupPosition));
+                //int child = Integer.parseInt(listDataChild.get(listDataHeader.get(groupPosition)).get(childPosition));
                 Toast.makeText(
                         getApplicationContext(),
-                        listDataHeader.get(groupPosition)
+                        listDataHeader.get(groupPosition) + ", " + groupPosition
                                 + " : "
-                                + listDataChild.get(
-                                listDataHeader.get(groupPosition)).get(
-                                childPosition), Toast.LENGTH_SHORT)
-                        .show();
+                                + listDataChild.get(listDataHeader.get(groupPosition)).get(childPosition) + ", " + childPosition, Toast.LENGTH_SHORT).show();
+                changeSetting(groupPosition,childPosition);
                 return false;
             }
         });
@@ -137,8 +143,55 @@ public class SettingsActivity extends AppCompatActivity {
         listDataChild.put(listDataHeader.get(2), fontColor);
         listDataChild.put(listDataHeader.get(3), fontSize);
         listDataChild.put(listDataHeader.get(4), background);
+
     }
 
+    public void changeSetting(int headerPos, int childPos)
+    {
 
+        switch(headerPos){
+            case 0:
+                changeTheme(childPos);
+                break;
+            case 1:
+                changeFont(childPos);
+                break;
+            case 2:
+                break;
+        }
+    }
 
+    public void changeTheme(int childPos){
+        switch(childPos){
+            case 0:
+                settings.setBackgroundColor(Color.rgb(10,10,10));
+                System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+                break;
+            case 1:
+                settings.setBackgroundColor(Color.WHITE);
+                System.out.println("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB");
+                break;
+            case 2:
+                settings.setBackgroundColor(Color.rgb(240,240,240));
+                System.out.println("CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC");
+                break;
+        }
+    }
+
+    public void changeFont(int childPos){
+
+    }
+
+    public void changeFontColor(int childPos){
+
+    }
+
+    public void changeFontSize(int childPos){
+
+    }
+
+    public void changeBackground(int childPos){
+        settings.setBackgroundColor(Color.rgb(10,10,10));
+
+    }
 }

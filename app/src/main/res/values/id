@@ -22,4 +22,6 @@
     <string name="lname">lname</string>
     <string name="regTitle">reg</string>
     <string name="regButton">regButt</string>
+    <string name="main">main</string>
+    <string name="settings">settings</string>
 </resources>
